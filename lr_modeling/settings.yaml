@@ -1,0 +1,32 @@
+# Settings for lr_models.py
+
+# The path for the folder where all results will be stored
+workingPath: '\home\RetroData'
+
+# The files of the train and test datasets as developed with a retrospective approach.
+testFileRaw: 'test_2006.json'
+trainFileRaw: 'train_2006.json'
+#removedInsatncesList : 'removed_pmids.txt'
+detailsfgNL: 'UseCasesSelected_2006.csv'
+project_name: 'Dataset_SI_2006'
+#detailsfgNL: 'UseCasesSelected_2006_sample.csv'
+#experiment_suffix: '_skip0.7'
+datasetPath: '\home\RetroData\Dataset_SI_2006_2022...'
+base_experiment_path: 'home\RetroData\LRC_results\D...'
+
+grid_search: true
+estimator_C_min: 3
+estimator_C_max: 10
+estimator_C_step: 2
+features_min: 5000
+features_max: 5000
+use_CUIs: false
+balance_n: 5
+FS_statistic: chi2 # one of "chi2" or f_classif
+seed_vals:
+  - 0
+  - 27
+  - 42
+  - 61
+  - 80
+  - 97

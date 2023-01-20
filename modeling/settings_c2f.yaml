@@ -1,0 +1,10 @@
+# Settings for c2f.py and evaluate_c2f.py: for C2F model development and evaluation
+
+experiment_folder: '\home\RetroData\Dataset_SI_2011\fgsi2011ue'
+datasetPath: '\home\RetroData\Dataset_SI_2011...'
+detailsfgNL: 'UseCasesSelected_2011.csv'
+testcsv: 'test_2011.csv'
+batch_size: 8
+modelName: 'bert-base-uncased'
+prediction_threshold: 0.5
+gpu_number: 0

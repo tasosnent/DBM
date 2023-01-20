@@ -1,0 +1,15 @@
+# Settings for MLreport.py: aggregation of the predictions from different models (seeds) into a majority-vote prediction and the results from different datasets into a single one.
+
+# A folder to store the resulting reports
+dataset_folder: '\home\RetroData'
+#   Experiments with test datasets (all with balance 10)
+multi_seed_experiments:
+#  A list of folders where the the predictions are stored for different datasets/years.
+#  The results for all the labels, for all these years will be gathered in a single report file.
+  - '\home\RetroData\DBM\Dataset_SI_2007\2022...\10'
+  - '\home\RetroData\DBM\Dataset_SI_2008\2022...\10'
+  - '\home\RetroData\DBM\Dataset_SI_2009\2022...\10'
+#  ...
+
+model_ep: ['best','prev','current'] #one of 'best', 'prev', 'current' or 'both' (for combination of both 'best' and 'prev' in one voting).
+

@@ -1,0 +1,49 @@
+# Settings for Transformer_models: for DBM model development and evaluation
+
+# The path for the folder where all results will be stored
+workingPath: '/home/RetroData'
+
+# The files of the train and test datasets as developed with a retrospective approach.
+testFileRaw: 'test_weak_2019.json'
+trainFileRaw: 'train_2019.json'
+project_name: 'Dataset_SI_2019'
+detailsfgNL: 'UseCasesSelected_2019.csv' # A CSv file with details about the
+datasetPath: '/home/RetroData'
+skip_test_evaluation: false
+skip_model_training: false
+
+# An array of two dimensions grouping the labels (e.g. based on their PH)
+#  or remove the focus_labels field to develop a multi-label model for all the labels available
+# focus_labels:
+#  - - 'D049920'
+#  - - 'D050681'
+#    - 'D050685'
+# Base model for fine-tuning
+modelName: 'microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract'
+batch_size: 8
+epochs: 12     # Number of training epochs. The BERT authors recommend between 2 and 4.
+learning_rate: 3e-5
+seed_vals: # Seed values for repeated experiments
+  - 0
+  - 27
+  - 42
+  - 61
+  - 80
+  - 97
+weight_decay_rate: 0.01 # this is for the last layer only.
+prediction_threshold: 0.5
+validation_ratio: 0.9 # Caution: validation_ratio is not considered when checking for saved data! plsease, delete any saved data when experimenting with this parameter.
+pos_weight: false # If true, use an array of weights to balance the classes/labels
+save_model: false # If true, save the final_model as a pickled file.
+epoch_to_use: 'more' # One of 'best', 'previous', 'both' (sands for 'previous' and 'best'), 'more' (stands for 'previous', 'best', and 'next')
+  # If 'best' use the best model on validation.
+  # If 'previous' replace the best model on validation, with the one of the previous epoch.
+  # If 'both' use both models for evaluation.
+tokenization_example: false # whether to print an exa,ple of tokenization or not.
+wandb_key: '...' # The key for wandb library to report the progress of the experiment
+gpu_number: 0
+
+loss_func_name: 'R-BCE-Focal' # One of 'BCE', 'FL', 'CBloss', 'R-BCE-Focal', 'NTR-Focal', 'DBloss-noFocal', 'CBloss-ntr', 'DBloss', or remove the field (in this case standard BCEWithLogitsLoss is used)
+
+balance_ns: # A list of balance_n values to be considered for different experiments. e.g. a value of 10 stands for keeping about 10 negatives per positive instance for each label.
+- 10

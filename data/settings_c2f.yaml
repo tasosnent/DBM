@@ -1,0 +1,9 @@
+# Settings for Datasets_c2f.py and Datasets_dbm_c2f.py
+
+
+# The path for the folder where all results will be stored
+datasets:
+  - '/home/tasosnent/RetroData/Dataset_SI_2006_2022...'
+  - '/home/tasosnent/RetroData/Dataset_SI_2007_2022...'
+  - '/home/tasosnent/RetroData/Dataset_SI_2008_2022...'
+#  ...

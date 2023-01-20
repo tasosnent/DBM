@@ -1,0 +1,13 @@
+# Settings for Datasets.py
+
+# The path for the folder where all results will be stored
+workingPath: '/home/RetroData'
+
+# The files of the train and test datasets as developed with a retrospective approach.
+testFileRaw: 'test_2006.json'
+trainFileRaw: 'train_2006.json'
+#removedInsatncesList : 'removed_pmids.txt'
+detailsfgNL: 'UseCasesSelected_2006.csv'
+project_name: 'Dataset_SI_2006...'
+#experiment_suffix: '_skip'
+
